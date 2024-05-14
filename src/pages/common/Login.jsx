@@ -45,7 +45,7 @@ const Login = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        'http://localhost:5050/auth/login',
+        'https://erp-server-3a3q.onrender.com/auth/login',
         { ...inputValue },
         { withCredentials: true }
       );

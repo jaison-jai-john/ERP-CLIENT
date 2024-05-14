@@ -14,7 +14,7 @@ const PostList = () => {
   useEffect(() => {
     const getPosts = async () => {
       const req = await axios
-        .get(`http://localhost:5050/post/class/${CID}`)
+        .get(`https://erp-server-3a3q.onrender.com/post/class/${CID}`)
         .then((res) => {
           setPosts(res.data);
           setLoaded(true);

@@ -12,9 +12,12 @@ const ClassList = () => {
   useEffect(() => {
     const getClasses = async () => {
       try {
-        const userClasses = await axios.get('http://localhost:5050/class/', {
-          withCredentials: true,
-        });
+        const userClasses = await axios.get(
+          'https://erp-server-3a3q.onrender.com/class/',
+          {
+            withCredentials: true,
+          }
+        );
         if (userClasses) {
           setClasses(userClasses.data);
           setLoading(false);

@@ -13,12 +13,16 @@ const Attendance = () => {
   const [date, setDate] = useState(new Date().toISOString().split('T')[0]);
 
   const getStudentAttendance = async () => {
-    const res = await axios.get(`http://localhost:5050/attendance/${user.UID}`);
+    const res = await axios.get(
+      `https://erp-server-3a3q.onrender.com/attendance/${user.UID}`
+    );
     console.log(res.data);
   };
 
   const getClassAttendance = async () => {
-    const res = await axios.get(`http://localhost:5050/attendance/${CID}`);
+    const res = await axios.get(
+      `https://erp-server-3a3q.onrender.com/attendance/${CID}`
+    );
     setAttendance(res.data);
   };
 

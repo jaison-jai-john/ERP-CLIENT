@@ -19,7 +19,7 @@ const EditPost = () => {
     e.preventDefault();
     setUploading(true);
     const req = axios
-      .patch(`http://localhost:5050/post/${post.PID}`, {
+      .patch(`https://erp-server-3a3q.onrender.com/post/${post.PID}`, {
         postType: inputValue.postType,
         message: inputValue.message,
         content: inputValue.content,

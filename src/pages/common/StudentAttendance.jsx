@@ -21,7 +21,9 @@ const StudentAttendance = () => {
     };
     const getClassAttendance = async () => {
       if (attendance.length > 0) return;
-      const res = await axios.get(`http://localhost:5050/attendance/${CID}`);
+      const res = await axios.get(
+        `https://erp-server-3a3q.onrender.com/attendance/${CID}`
+      );
       setAttendance(res.data);
     };
     getClassAttendance();

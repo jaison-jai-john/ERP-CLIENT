@@ -18,7 +18,7 @@ const AddPost = () => {
 
   const addpost = async (e) => {
     e.preventDefault();
-    const req = await axios.post('http://localhost:5050/post/', {
+    const req = await axios.post('https://erp-server-3a3q.onrender.com/post/', {
       postType: post.postType,
       message: post.message,
       content: post.content,

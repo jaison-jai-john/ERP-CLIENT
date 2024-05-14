@@ -29,14 +29,14 @@ const Class = () => {
     const getClass = async () => {
       try {
         const res = await axios
-          .get(`http://localhost:5050/class/${CID}`)
+          .get(`https://erp-server-3a3q.onrender.com/class/${CID}`)
           .then(async (res) => {
             if (res.status === 404) {
               throw new Error('Class not found');
             }
             setClassInfo(res.data);
             const teacher = await axios.get(
-              `http://localhost:5050/user/${res.data.teacher}`
+              `https://erp-server-3a3q.onrender.com/user/${res.data.teacher}`
             );
             setClassInfo({ ...res.data, teacher: teacher.data });
             setLoaded(false);

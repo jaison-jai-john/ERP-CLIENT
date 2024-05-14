@@ -3,7 +3,7 @@ import axios from 'axios';
 export const getUser = async (id) => {
   if (!id) return false;
   const req = await axios.get(
-    `http://localhost:5050/user/${id}`,
+    `https://erp-server-3a3q.onrender.com/user/${id}`,
     {},
     { withCredentials: true }
   );
@@ -17,7 +17,7 @@ export const getUser = async (id) => {
 export const getClass = async (CID) => {
   if (!CID) return false;
   const req = await axios.get(
-    `http://localhost:5050/class/${CID}`,
+    `https://erp-server-3a3q.onrender.com/class/${CID}`,
     {},
     { withCredentials: true }
   );
@@ -30,7 +30,7 @@ export const getClass = async (CID) => {
 
 export const getClasses = async () => {
   const req = await axios.get(
-    `http://localhost:5050/class`,
+    `https://erp-server-3a3q.onrender.com/class`,
     {},
     { withCredentials: true }
   );
@@ -44,7 +44,7 @@ export const getClasses = async () => {
 export const getPosts = async (CID) => {
   if (!CID) return false;
   const req = await axios.get(
-    `http://localhost:5050/post/class/${CID}`,
+    `https://erp-server-3a3q.onrender.com/post/class/${CID}`,
     {},
     { withCredentials: true }
   );
@@ -58,7 +58,7 @@ export const getPosts = async (CID) => {
 export const getPost = async (PID) => {
   if (!PID) return false;
   const req = await axios.get(
-    `http://localhost:5050/post/${PID}`,
+    `https://erp-server-3a3q.onrender.com/post/${PID}`,
     {},
     { withCredentials: true }
   );

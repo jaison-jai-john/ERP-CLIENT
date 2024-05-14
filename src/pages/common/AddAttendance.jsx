@@ -13,7 +13,7 @@ const AddAttendance = () => {
     const getMembers = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5050/class/${CID}/members`
+          `https://erp-server-3a3q.onrender.com/class/${CID}/members`
         );
         setMembers(res.data);
         setUIDs(res.data.map((member) => member.UID));
@@ -32,12 +32,15 @@ const AddAttendance = () => {
       } else {
         setUIDs(UIDs.filter((id) => id !== UID));
       }
-      const res = await axios.patch(`http://localhost:5050/attendance/`, {
-        CID: CID,
-        UID: UID,
-        date,
-        status: e.target.value,
-      });
+      const res = await axios.patch(
+        `https://erp-server-3a3q.onrender.com/attendance/`,
+        {
+          CID: CID,
+          UID: UID,
+          date,
+          status: e.target.value,
+        }
+      );
       console.log(res.data);
     } catch (err) {
       console.log(err);

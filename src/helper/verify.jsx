@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const verifyAccess = async (role) => {
   return await axios.get(
-    'http://localhost:5050/user/verifyaccess',
+    'https://erp-server-3a3q.onrender.com/user/verifyaccess',
     { role },
     { withCredentials: true }
   );

@@ -12,7 +12,7 @@ const MemberList = () => {
     const getMembers = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5050/class/${CID}/members`
+          `https://erp-server-3a3q.onrender.com/class/${CID}/members`
         );
         setMembers(res.data);
         setLoaded(true);

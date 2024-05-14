@@ -26,7 +26,9 @@ const Post = () => {
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get(`http://localhost:5050/post/${PID}`);
+      const res = await axios.get(
+        `https://erp-server-3a3q.onrender.com/post/${PID}`
+      );
       setPost(res.data);
       setLoaded(true);
     };
@@ -35,7 +37,7 @@ const Post = () => {
 
   const deletePost = async () => {
     const req = await axios
-      .delete(`http://localhost:5050/post/${post.PID}`)
+      .delete(`https://erp-server-3a3q.onrender.com/post/${post.PID}`)
       .then((res) => {
         if (res.status === 200) {
           navigate(`/class/${post.CID}`);

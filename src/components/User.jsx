@@ -29,7 +29,7 @@ const User = () => {
       setIsNew(false);
       // fetch user using id
       const response = await fetch(
-        `http://localhost:5050/user/${params.id.toString()}`
+        `https://erp-server-3a3q.onrender.com/user/${params.id.toString()}`
       );
       if (!response.ok) {
         const message = `An error has occurred: ${response.statusText}`;
@@ -65,17 +65,20 @@ const User = () => {
       let response;
       if (isNew) {
         // if new user then post
-        response = await fetch('http://localhost:5050/user/add', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(person),
-        });
+        response = await fetch(
+          'https://erp-server-3a3q.onrender.com/user/add',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(person),
+          }
+        );
       } else {
         // if existing user then patch
         response = await fetch(
-          `http://localhost:5050/user/update/${params.id}`,
+          `https://erp-server-3a3q.onrender.com/user/update/${params.id}`,
           {
             method: 'PATCH',
             headers: {
@@ -100,7 +103,9 @@ const User = () => {
   };
 
   const deleteUser = async () => {
-    const res = await fetch(`http://localhost:5050/user/delete/${params.id}`);
+    const res = await fetch(
+      `https://erp-server-3a3q.onrender.com/user/delete/${params.id}`
+    );
     if (!res.ok) {
       const message = `An error has occurred: ${res.statusText}`;
       console.error(message);
